@@ -172,7 +172,9 @@ private:
 	/* Components End */
 
 	/* Movement */
+
 	FVector2D LastMovementInput;
+
 	/* Movement End */
 
 	/* Montages */
