@@ -1,3 +1,5 @@
+#pragma once
+
 #include "CoreMinimal.h"
 #include "BaseCharacter.h"
 #include "InputActionValue.h"
@@ -107,6 +109,11 @@ protected:
 	virtual bool CanAttack() override;
 	void Die_Implementation();
 	void PlayEquipMontage(const FName& SectionName);
+
+	UFUNCTION(BlueprintCallable)
+	void DodgeIFramesStart();
+	UFUNCTION(BlueprintCallable)
+	void DodgeIFramesEnd();
 
 	UFUNCTION(BlueprintCallable)
 	bool CanDisarm();

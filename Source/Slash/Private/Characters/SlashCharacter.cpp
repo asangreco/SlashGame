@@ -492,6 +492,19 @@ void ASlashCharacter::PlayEquipMontage(const FName& SectionName)
 	}
 }
 
+void ASlashCharacter::DodgeIFramesStart()
+{
+	// This function can be called from the dodge montage to enable i-frames during the dodge animation
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+}
+
+void ASlashCharacter::DodgeIFramesEnd()
+{
+	// This function can be called from the dodge montage to disable i-frames after the dodge animation
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+}
+
 bool ASlashCharacter::CanDisarm()
 {
 	return ActionState == EActionState::EAS_Unoccupied && CharacterState != ECharacterState::ECS_Unequipped && EquipMontage;
